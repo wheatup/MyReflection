@@ -13,6 +13,8 @@ var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, func
 	this.heroR = null;
 	this.spawnPoint = null;
 	this.levels = [];
+
+	this._lastHeight = 0;
 }, {
 	pfHero: qc.Serializer.PREFAB,
 	pfHeroR: qc.Serializer.PREFAB,
@@ -24,6 +26,7 @@ var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, func
 
 GameManager.prototype.update = function() {
 	this.tick++;
+	this.checkWindowSize();
 };
 
 GameManager.prototype.awake = function() {
@@ -67,4 +70,20 @@ GameManager.prototype.getLevel = function(levelId, isAnti) {
 		}
 	}
 	return null;
+};
+
+
+GameManager.prototype.checkWindowSize = function(){
+    if(this._lastHeight == 0){
+        this._lastHeight = this.game.height;
+        return;
+    }
+
+    if(this._lastHeight != this.game.height){
+        this.game.phaser.physics.arcade.isPaused = true;
+    }else{
+        this.game.phaser.physics.arcade.isPaused = false;
+    }
+
+    this._lastHeight = this.game.height;
 };
