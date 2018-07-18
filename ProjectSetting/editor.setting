@@ -1,5 +1,5 @@
 {
   "layout": "landscape",
-  "currScene": "Assets/scene/GameScene",
-  "stateMD5": "14a18fa5708cec65ee7bb514d2b156b2"
+  "stateMD5": "c50990206152c89f6481b0b0ce37b5f0",
+  "currScene": "Assets/scene/GameScene"
 }

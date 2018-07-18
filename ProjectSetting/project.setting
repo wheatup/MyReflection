@@ -20,14 +20,14 @@
   "transparent": false,
   "developerMode": false,
   "appCache": true,
-  "dirtyRectangles": false,
+  "dirtyRectangles": true,
   "dirtyRectanglesShow": false,
   "customSettings": {},
   "publish": {
     "android": "build/android",
     "ios": "build/ios",
     "browsers": "build/browsers",
-    "browsers_timestamp": true,
+    "browsers_timestamp": false,
     "android_timestamp": true,
     "ios_timestamp": true
   },

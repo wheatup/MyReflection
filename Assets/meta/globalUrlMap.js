@@ -17,5 +17,5 @@ urlMapConfig = {
   "8744df05-fbdf-492d-835d-8d05c2a42c74": "Assets/prefab/Hero.bin",
   "6d4ceb38-06a8-48c4-8712-3987b6c522f9": "Assets/prefab/HeroR.bin",
   "38bc492b-a5d1-4b94-a7e8-91b0983d59b1": "Assets/scene/GameScene.bin",
-  "bf2907bc-577e-4e63-bd67-1306993ae052": "Temp/scene_editor.bin"
+  "23492e12-7281-4af0-a318-740cd3376332": "Temp/scene_editor.bin"
 };
