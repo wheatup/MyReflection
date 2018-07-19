@@ -6,14 +6,23 @@
 var Control = qc.defineBehaviour('qc.engine.Control', qc.Behaviour, function() {
 	Control.$ = this;
 
-	this.UP = {isDown: false, isJustDown: false, isJustUp: false};
-	this.DOWN = {isDown: false, isJustDown: false, isJustUp: false};
-	this.LEFT = {isDown: false, isJustDown: false, isJustUp: false};
-	this.RIGHT = {isDown: false, isJustDown: false, isJustUp: false};
-	this.ACTION = {isDown: false, isJustDown: false, isJustUp: false};
+	var KeyEvent = {isDown: false, isJustDown: false, isJustUp: false};
+
+	this.UP = new Control.KeyEvent();
+	this.DOWN = new Control.KeyEvent();
+	this.LEFT = new Control.KeyEvent();
+	this.RIGHT = new Control.KeyEvent();
+	this.ACTION = new Control.KeyEvent();
+	this.R = new Control.KeyEvent();
 }, {
 
 });
+
+Control.KeyEvent = function(){
+	this.isDown = false;
+	this.isJustDown = false;
+	this.isJustUp = false;
+};
 
 Control.prototype.awake = function() {
 	this.game.input.onKeyDown.add(this.onKeyDown, this);
@@ -46,6 +55,10 @@ Control.prototype.onKeyDown = function(keyCode) {
 			this.ACTION.isDown = true;
 			this.ACTION.isJustDown = true;
 			break;
+		case qc.Keyboard.R:
+			this.R.isDown = true;
+			this.R.isJustDown = true;
+			break;
 	}
 };
 
@@ -75,6 +88,10 @@ Control.prototype.onKeyUp = function(keyCode) {
 			this.ACTION.isDown = false;
 			this.ACTION.isJustUp = true;
 			break;
+		case qc.Keyboard.R:
+			this.R.isDown = false;
+			this.R.isJustUp = true;
+			break;
 	}
 };
 
@@ -89,4 +106,6 @@ Control.prototype.postUpdate = function() {
 	this.RIGHT.isJustUp = false;
 	this.ACTION.isJustDown = false;
 	this.ACTION.isJustUp = false;
+	this.R.isJustDown = false;
+	this.R.isJustUp = false;
 };

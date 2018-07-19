@@ -4,6 +4,7 @@
  * @author wh
  */
 var Hero = qc.defineBehaviour('qc.engine.Hero', qc.Behaviour, function() {
+	Hero.$ = this;
 	this.speed = 150;
 	this.jumpSpeed = 400;
 	this.gravity = 900;
@@ -21,8 +22,7 @@ var Hero = qc.defineBehaviour('qc.engine.Hero', qc.Behaviour, function() {
 	this._heroRSprite = null;
 	this._tickIndex = 0;
 	this._animDelay = 8;
-
-	this.overlaps = [];
+	this.touchedDoors = [];
 }, {
 
 });
@@ -31,6 +31,12 @@ Hero.prototype.awake = function() {
 	this.body = this.gameObject.RigidBody;
 	this.body.gravity.y = this.gravity;
 	this._heroSprite = this.gameObject.find('Sprite');
+
+	whevent.bind('START_LEVEL', this.onStartLevel, this);
+};
+
+Hero.prototype.onStartLevel = function(level) {
+
 };
 
 Hero.prototype.update = function() {
@@ -88,16 +94,17 @@ Hero.prototype.applyInput = function() {
 		}
 	}
 
-	if(Control.$.ACTION.isJustDown){
-		if(this.canJump()){
-			if(this.overlaps.length > 0){
-				for(var i = 0; i < this.overlaps.length; i++){
-					if(this.overlaps[i].target){
-						GameManager.$.switchLevel(this.overlaps[i].target, this.overlaps[i].isAnti);
-					}
-				}
+	if(Control.$.ACTION.isJustDown && this.touchedDoors.length > 0){
+		for(var i = 0; i < this.touchedDoors.length; i++){
+			if(this.touchedDoors[i].target){
+				GameManager.$.switchLevel(this.touchedDoors[i].target, this.touchedDoors[i].isAnti);
 			}
 		}
+		this.touchedDoors = [];
+	}
+
+	if(Control.$.R.isJustDown){
+		GameManager.$.restartLevel();
 	}
 };
 

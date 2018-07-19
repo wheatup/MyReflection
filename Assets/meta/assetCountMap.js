@@ -1,4 +1,4 @@
 assetCountMap = {
-  "Temp/scene_editor.bin": 4,
-  "Assets/scene/GameScene.bin": 4
+  "Assets/scene/GameScene.bin": 5,
+  "Temp/scene_editor.bin": 5
 };

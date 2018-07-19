@@ -10,6 +10,7 @@ urlMapConfig = {
   "096a857a-c01f-49c3-8723-88cd11e1f570": "Assets/atlas/game@atlas/hero_run3.bin",
   "87979300-8497-42cd-9e34-1559778452c8": "Assets/atlas/game@atlas/hero_run4.bin",
   "e8306d73-9c83-4feb-a6f1-029fe563a4dc": "Assets/atlas/game@atlas/white.bin",
+  "l33bf54a-a5d1-4de4-a108-c8d627875d8a": "Assets/font/BitPotion.bin",
   "61d005c0-8d76-4237-95af-dcfd24c021b7": "Assets/prefab/Block.bin",
   "0cf069c0-a607-4430-81ed-2aabcebdb4d7": "Assets/prefab/BlockR.bin",
   "ecd7983e-a132-49cf-84ba-9a911f12bd73": "Assets/prefab/Exit.bin",
@@ -17,5 +18,5 @@ urlMapConfig = {
   "8744df05-fbdf-492d-835d-8d05c2a42c74": "Assets/prefab/Hero.bin",
   "6d4ceb38-06a8-48c4-8712-3987b6c522f9": "Assets/prefab/HeroR.bin",
   "38bc492b-a5d1-4b94-a7e8-91b0983d59b1": "Assets/scene/GameScene.bin",
-  "23492e12-7281-4af0-a318-740cd3376332": "Temp/scene_editor.bin"
+  "bf2907bc-577e-4e63-bd67-1306993ae052": "Temp/scene_editor.bin"
 };

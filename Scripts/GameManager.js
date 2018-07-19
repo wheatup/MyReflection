@@ -34,7 +34,7 @@ GameManager.prototype.awake = function() {
 };
 
 GameManager.prototype.onEnable = function() {
-	this.startGame();
+	this.startGame(1);
 };
 
 GameManager.prototype.onPlayerDie = function() {
@@ -42,11 +42,24 @@ GameManager.prototype.onPlayerDie = function() {
 	this.hero.anchoredY = this.spawnPoint.anchoredY;
 };
 
-GameManager.prototype.startGame = function() {
-	this.hero = this.game.add.clone(this.pfHero, this.upperWorld);
-	this.heroR = this.game.add.clone(this.pfHeroR, this.bottomWorld);
-	this.switchLevel(1, false);
-	this.switchLevel(1, true);
+GameManager.prototype.restartLevel = function() {
+	this.switchLevel(this.currentLevel, false);
+	this.switchLevel(this.currentLevelR, true);
+	if(this.spawnPoint){
+		this.hero.anchoredX = this.spawnPoint.anchoredX;
+		this.hero.anchoredY = this.spawnPoint.anchoredY;
+	}
+};
+
+GameManager.prototype.startGame = function(level) {
+	if(!this.hero){
+		this.hero = this.game.add.clone(this.pfHero, this.upperWorld);
+	}
+	if(!this.heroR){
+		this.heroR = this.game.add.clone(this.pfHeroR, this.bottomWorld);
+	}
+	this.switchLevel(level, false);
+	this.switchLevel(level, true);
 	if(this.spawnPoint){
 		this.hero.anchoredX = this.spawnPoint.anchoredX;
 		this.hero.anchoredY = this.spawnPoint.anchoredY;
@@ -54,6 +67,7 @@ GameManager.prototype.startGame = function() {
 };
 
 GameManager.prototype.switchLevel = function(levelId, isAnti) {
+	whevent.call('START_LEVEL', {levelId: levelId, isAnti: isAnti});
 	console.log('Switch level', levelId, isAnti);
 	if(isAnti && this.currentLevelR){
 		this.getLevel(this.currentLevelR, true).endLevel();

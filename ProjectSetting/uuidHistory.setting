@@ -47,7 +47,7 @@
   "Assets/prefab/Slot.bin": "da13b883-d8c7-41b3-bbc0-276e1db1d44a",
   "Assets/prefab/SlotStripe.bin": "8398bc1a-21d4-471d-8103-d73e01372a9a",
   "Assets/scene/GameScene.bin": "38bc492b-a5d1-4b94-a7e8-91b0983d59b1",
-  "Temp/scene_editor.bin": "23492e12-7281-4af0-a318-740cd3376332",
+  "Temp/scene_editor.bin": "bf2907bc-577e-4e63-bd67-1306993ae052",
   "Assets/atlas/game@atlas/block.bin": "904c5f29-be04-4454-9f27-0fb72e82e260",
   "Assets/atlas/game@atlas/empty.bin": "ad20b723-c9b8-4155-818b-38cf85fe72b5",
   "Assets/atlas/game@atlas/hero_idle.bin": "0da21b7e-4a98-4f9b-97b8-33e886126092",
@@ -63,5 +63,6 @@
   "Assets/prefab/BlockR.bin": "0cf069c0-a607-4430-81ed-2aabcebdb4d7",
   "Assets/atlas/game@atlas/exit.bin": "f70c2aad-937d-4c6d-acb9-ff715b80f0b8",
   "Assets/prefab/Exit.bin": "ecd7983e-a132-49cf-84ba-9a911f12bd73",
-  "Assets/prefab/ExitR.bin": "3f8d3e3c-06af-4748-8d0c-00929d8bf955"
+  "Assets/prefab/ExitR.bin": "3f8d3e3c-06af-4748-8d0c-00929d8bf955",
+  "Assets/font/BitPotion.bin": "l33bf54a-a5d1-4de4-a108-c8d627875d8a"
 }
