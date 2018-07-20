@@ -15,6 +15,7 @@ var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, func
 	this.levels = [];
 
 	this._lastHeight = 0;
+	this.version = 'alpha 0.1.0';
 }, {
 	pfHero: qc.Serializer.PREFAB,
 	pfHeroR: qc.Serializer.PREFAB,

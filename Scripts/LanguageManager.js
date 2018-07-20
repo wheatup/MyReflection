@@ -69,14 +69,26 @@ LanguageManager.prototype.switchLanguage = function(lang) {
 	this.currentLang = window['lang_' + lang];
 	this.replaceChildrenTexts(this.uiRoot);
 	this.languageButton.text = window['lang_' + lang].$$TITLE$$;
+
+	if(!this.languageButton.tempFont){
+		this.languageButton.tempFont = this.languageButton.font;
+	}
+	if(!ele.languageButton.orgSize){
+		ele.languageButton.orgSize = ele.children[i].fontSize;
+	}
+
 	if(window['lang_' + lang].$$FONT$$){
-		if(!this.languageButton.tempFont){
-			this.languageButton.tempFont = this.languageButton.font;
-		}
+
 		this.languageButton.fontFamily = 0;
 	}else{
 		this.languageButton.fontFamily = 1;
 		this.languageButton.font = this.languageButton.tempFont;
+	}
+
+	if(this.currentLang.$$SIZE$$){
+		this.languageButton.fontSize = this.currentLang.$$SIZE$$ * this.languageButton.orgSize;
+	}else{
+		this.languageButton.fontSize = this.languageButton.orgSize;
 	}
 };
 
