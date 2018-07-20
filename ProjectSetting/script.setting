@@ -1,1 +1,1 @@
-{"logicalScriptOrder":["Scripts/libs/whevent.js","Scripts/libs/whTween.js","Scripts/libs/Database.js"],"editorScriptOrder":[]}
+{"logicalScriptOrder":["Scripts/lang/en.js","Scripts/lang/zh_CN.js"],"editorScriptOrder":[]}

@@ -29,13 +29,12 @@ TopTip.prototype.onStartLevel = function(level) {
 };
 
 TopTip.prototype.showTip = function(tip, tip2) {
-	console.log('Show tip', tip, tip2);
-	this.topText.text = tip + '';
+	this.topText.text = LanguageManager.$.getString(tip + '');
 	this.topText.alpha = 0;
 	this.topText.visible = true;
 	wh.Tween.remove(this.topText);
 	wh.Tween.get(this.topText).to({alpha:1}, 1000).wait(3000).to({alpha: 0}, 1000).call(function(){this.topText.visible = false;}, null, this);
-	this.btmText.text = (tip2 ? tip2 : tip) + '';
+	this.btmText.text = LanguageManager.$.getString((tip2 ? tip2 : tip) + '');
 	this.btmText.alpha = 0;
 	this.btmText.visible = true;
 	wh.Tween.remove(this.btmText);
