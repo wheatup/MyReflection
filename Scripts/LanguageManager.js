@@ -73,8 +73,8 @@ LanguageManager.prototype.switchLanguage = function(lang) {
 	if(!this.languageButton.tempFont){
 		this.languageButton.tempFont = this.languageButton.font;
 	}
-	if(!ele.languageButton.orgSize){
-		ele.languageButton.orgSize = ele.children[i].fontSize;
+	if(!this.languageButton.orgSize){
+		this.languageButton.orgSize = this.languageButton.fontSize;
 	}
 
 	if(window['lang_' + lang].$$FONT$$){
