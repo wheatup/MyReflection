@@ -1,7 +1,7 @@
 /**
  * Block
- * @summary Block
- * @author wh
+ * @summary Just a block
+ * @author wheatup
  */
 var Block = qc.defineBehaviour('qc.engine.Block', qc.Behaviour, function() {
 
@@ -12,6 +12,7 @@ var Block = qc.defineBehaviour('qc.engine.Block', qc.Behaviour, function() {
 });
 
 Block.prototype.awake = function() {
+	// Fix the rigid body for the anti block
 	if(this.isAnti){
 		this.body.scaleY = -1;
 		this.body.top = -2 * this.gameObject.anchoredY;

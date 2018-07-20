@@ -1,6 +1,6 @@
 /**
  * Control
- * @summary Control
+ * @summary Manage the user input
  * @author wh
  */
 var Control = qc.defineBehaviour('qc.engine.Control', qc.Behaviour, function() {

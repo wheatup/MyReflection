@@ -1,19 +1,16 @@
 /**
  * Trigger
- * @summary Trigger
+ * @summary A trigger object, when player enters, it triggers
  * @author wh
  */
 var Trigger = qc.defineBehaviour('qc.engine.Trigger', qc.Behaviour, function() {
 	this.activate = true;
 
-	// 触碰时的事件
 	this.onTouch = new Phaser.Signal();
-	// 未触碰时的事件
 	this.onUntouch = new Phaser.Signal();
-	// 完全进入时的事件
 	this.onEnter = new Phaser.Signal();
-	// 未完全进入时的事件
 	this.onExit = new Phaser.Signal();
+	// an alias for the exit event
 	this.onLeave = this.onExit;
 
 	this.isEnter = false;

@@ -1,6 +1,6 @@
 /**
  * Hero
- * @summary Hero
+ * @summary Hero, very creative
  * @author wh
  */
 var Hero = qc.defineBehaviour('qc.engine.Hero', qc.Behaviour, function() {
@@ -36,7 +36,7 @@ Hero.prototype.awake = function() {
 };
 
 Hero.prototype.onStartLevel = function(level) {
-
+	this.touchedDoors = [];
 };
 
 Hero.prototype.update = function() {

@@ -1,6 +1,6 @@
 /**
  * Exit
- * @summary Exit
+ * @summary It is actually a door
  * @author wh
  */
 var Exit = qc.defineBehaviour('qc.engine.Exit', qc.Behaviour, function() {

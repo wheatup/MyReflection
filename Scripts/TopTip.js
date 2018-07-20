@@ -1,6 +1,6 @@
 /**
  * TopTip
- * @summary TopTip
+ * @summary Show a little tip text above the screen
  * @author wh
  */
 var TopTip = qc.defineBehaviour('qc.engine.TopTip', qc.Behaviour, function() {
@@ -29,6 +29,7 @@ TopTip.prototype.onStartLevel = function(level) {
 };
 
 TopTip.prototype.showTip = function(tip, tip2) {
+	console.log('Show tip', tip, tip2);
 	this.topText.text = tip + '';
 	this.topText.alpha = 0;
 	this.topText.visible = true;

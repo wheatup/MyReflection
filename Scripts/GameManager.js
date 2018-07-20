@@ -1,6 +1,6 @@
 /**
  * GameManager
- * @summary GameManager
+ * @summary Manage the kernel logic of the entire game
  * @author wh
  */
 var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, function() {
@@ -24,12 +24,17 @@ var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, func
 	bottomLevelContainer: qc.Serializer.NODE,
 	mainMenuView: qc.Serializer.NODE,
 	gameView: qc.Serializer.NODE,
-
 });
 
 GameManager.prototype.update = function() {
 	this.tick++;
 	this.checkWindowSize();
+
+	if(this.currentLevel <= 0){
+		if(Control.$.ACTION.isJustDown){
+			this.onClickStart();
+		}
+	}
 };
 
 GameManager.prototype.awake = function() {
@@ -82,7 +87,12 @@ GameManager.prototype.switchLevel = function(levelId, isAnti) {
 	}else if(!isAnti && this.currentLevel){
 		this.getLevel(this.currentLevel, false).endLevel();
 	}
+	Database.$.lastPlayerPos = new qc.Point(this.hero.anchoredX, this.hero.anchoredY);
 	this.getLevel(levelId, isAnti).startLevel();
+	if(Database.$.lastPlayerPos){
+		this.hero.anchoredX = Database.$.lastPlayerPos.x;
+		this.hero.anchoredY = Database.$.lastPlayerPos.y-1;
+	}
 };
 
 GameManager.prototype.getLevel = function(levelId, isAnti) {

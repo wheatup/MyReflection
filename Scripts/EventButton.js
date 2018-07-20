@@ -1,6 +1,6 @@
 /**
  * EventButton
- * @summary EventButton
+ * @summary A single text button behavior
  * @author wh
  */
 var EventButton = qc.defineBehaviour('qc.engine.EventButton', qc.Behaviour, function() {
