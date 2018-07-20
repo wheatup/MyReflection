@@ -13,7 +13,8 @@ var Block = qc.defineBehaviour('qc.engine.Block', qc.Behaviour, function() {
 
 Block.prototype.awake = function() {
 	if(this.isAnti){
-		this.body.pivotY = 0;
-		this.body.anchoredY = -2 * this.gameObject.anchoredY;
+		this.body.scaleY = -1;
+		this.body.top = -2 * this.gameObject.anchoredY;
+		this.body.bottom = 2 * this.gameObject.anchoredY;
 	}
 };

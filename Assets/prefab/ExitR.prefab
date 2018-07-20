@@ -1,7 +1,7 @@
 {
   "class": "qc.UIImage",
   "data": {
-    "uuid": "6bc2eef6-1c73-4ee6-9ee2-ff995c2771ce",
+    "uuid": "81f6211d-0084-4d10-8557-40e9ac620243",
     "_prefab": [
       7,
       "3f8d3e3c-06af-4748-8d0c-00929d8bf955"
@@ -47,10 +47,10 @@
     "position": [
       0.5,
       1,
-      140,
-      0.000010800361110341328,
-      140,
-      0.000010800361110341328,
+      -360,
+      -140,
+      -360,
+      -140,
       30,
       50,
       0,
@@ -86,7 +86,7 @@
       {
         "class": "qc.Sprite",
         "data": {
-          "uuid": "8399fec0-f7e3-47e2-8d25-93e742fff9ba",
+          "uuid": "fcf6090a-6621-4b6d-a77d-1ccbe2106b71",
           "_prefab": [
             7,
             ""
@@ -182,7 +182,7 @@
       {
         "class": "qc.UIImage",
         "data": {
-          "uuid": "4a412d06-242c-4fec-a39d-adac84ffb5d2",
+          "uuid": "a366ca26-23f2-40e4-8a8c-fdc42d8facf5",
           "_prefab": [
             7,
             ""
@@ -219,23 +219,28 @@
             5,
             false
           ],
-          "scripts": [],
+          "scripts": [
+            {
+              "clazz": "qc.engine.Trigger",
+              "data": "02f407e0-84ad-4e0a-b42f-49d80d927d74"
+            }
+          ],
           "position": [
             0.5,
             1,
+            15,
+            50,
             0,
-            1.1368683772161603e-13,
             0,
-            1.1368683772161603e-13,
             30,
             38,
             0,
             0,
+            12,
             0,
             0,
-            0.5,
+            0,
             1,
-            0.5,
             1
           ],
           "scaleX": [
@@ -244,7 +249,7 @@
           ],
           "scaleY": [
             3,
-            -1
+            1
           ],
           "rotation": [
             3,
@@ -282,7 +287,23 @@
             null
           ]
         },
-        "__json": {}
+        "__json": {
+          "02f407e0-84ad-4e0a-b42f-49d80d927d74": {
+            "class": "qc.engine.Trigger",
+            "data": {
+              "uuid": [
+                7,
+                "02f407e0-84ad-4e0a-b42f-49d80d927d74"
+              ],
+              "enable": true,
+              "target": null,
+              "activate": [
+                5,
+                true
+              ]
+            }
+          }
+        }
       }
     ],
     "texture": [
@@ -319,11 +340,11 @@
         "enable": true,
         "image": [
           18,
-          "8399fec0-f7e3-47e2-8d25-93e742fff9ba"
+          "fcf6090a-6621-4b6d-a77d-1ccbe2106b71"
         ],
         "body": [
           18,
-          "4a412d06-242c-4fec-a39d-adac84ffb5d2"
+          "a366ca26-23f2-40e4-8a8c-fdc42d8facf5"
         ],
         "isAnti": [
           5,
@@ -331,7 +352,7 @@
         ],
         "target": [
           1,
-          2
+          1
         ]
       }
     }

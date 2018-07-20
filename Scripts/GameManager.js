@@ -21,7 +21,10 @@ var GameManager = qc.defineBehaviour('qc.engine.GameManager', qc.Behaviour, func
 	upperWorld: qc.Serializer.NODE,
 	bottomWorld: qc.Serializer.NODE,
 	upperLevelContainer: qc.Serializer.NODE,
-	bottomLevelContainer: qc.Serializer.NODE
+	bottomLevelContainer: qc.Serializer.NODE,
+	mainMenuView: qc.Serializer.NODE,
+	gameView: qc.Serializer.NODE,
+
 });
 
 GameManager.prototype.update = function() {
@@ -30,10 +33,13 @@ GameManager.prototype.update = function() {
 };
 
 GameManager.prototype.awake = function() {
+	this.gameView.visible = false;
+	this.mainMenuView.visible = true;
 	whevent.bind('DIE', this.onPlayerDie, this);
+	whevent.bind('$START', this.onClickStart, this);
 };
 
-GameManager.prototype.onEnable = function() {
+GameManager.prototype.onClickStart = function() {
 	this.startGame(1);
 };
 
@@ -52,6 +58,9 @@ GameManager.prototype.restartLevel = function() {
 };
 
 GameManager.prototype.startGame = function(level) {
+	this.mainMenuView.visible = false;
+	this.gameView.visible = true;
+	SoundManager.$.playBGM();
 	if(!this.hero){
 		this.hero = this.game.add.clone(this.pfHero, this.upperWorld);
 	}
@@ -64,11 +73,10 @@ GameManager.prototype.startGame = function(level) {
 		this.hero.anchoredX = this.spawnPoint.anchoredX;
 		this.hero.anchoredY = this.spawnPoint.anchoredY;
 	}
+	whevent.call('START_GAME');
 };
 
 GameManager.prototype.switchLevel = function(levelId, isAnti) {
-	whevent.call('START_LEVEL', {levelId: levelId, isAnti: isAnti});
-	console.log('Switch level', levelId, isAnti);
 	if(isAnti && this.currentLevelR){
 		this.getLevel(this.currentLevelR, true).endLevel();
 	}else if(!isAnti && this.currentLevel){

@@ -8,7 +8,7 @@
     "desktop": 60
   },
   "fixedGameSize": {
-    "enabled": true,
+    "enabled": false,
     "width": 800,
     "height": 600
   },

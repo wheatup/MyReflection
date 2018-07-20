@@ -42,7 +42,7 @@ Level.prototype.initLevel = function() {
 		}, this.doors[i]);
 	}
 
-
+	console.log(this.levelId);
 	switch(this.levelId){
 		case 1:
 			if(this.triggers.length > 0){
@@ -50,6 +50,13 @@ Level.prototype.initLevel = function() {
 				this.triggers[0].Trigger.onTouch.addOnce(function(){
 					TopTip.$.showTip('Press "R" to restart');
 				}, this);
+			}
+			TopTip.$.showTip('Use "WSAD" or D-pad to move.');
+			console.log(this.doors);
+			if(this.doors.length > 0){
+				this.doors[0].find('Body').Trigger.onTouch.addOnce(function(){
+					TopTip.$.showTip('Press "Z" to enter.');
+				});
 			}
 		break;
 	}

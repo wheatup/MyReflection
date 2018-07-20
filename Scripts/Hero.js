@@ -96,8 +96,14 @@ Hero.prototype.applyInput = function() {
 
 	if(Control.$.ACTION.isJustDown && this.touchedDoors.length > 0){
 		for(var i = 0; i < this.touchedDoors.length; i++){
-			if(this.touchedDoors[i].target){
-				GameManager.$.switchLevel(this.touchedDoors[i].target, this.touchedDoors[i].isAnti);
+			if(this.touchedDoors[i].targets.length > 0){
+				SoundManager.$.playSFX('Door');
+				for(var ii = 0; ii < this.touchedDoors[i].targets.length; ii++){
+					if(this.touchedDoors[i].targets[ii] > 0){
+						GameManager.$.switchLevel(this.touchedDoors[i].targets[ii], ii === 0);
+					}
+				}
+
 			}
 		}
 		this.touchedDoors = [];
@@ -111,6 +117,7 @@ Hero.prototype.applyInput = function() {
 Hero.prototype.applyMovement = function() {
 	if(this.jumping){
 		if(this.canJump()){
+			SoundManager.$.playSFX('Jump');
 			this.body.velocity.y = -this.jumpSpeed;
 		}
 	}else if(this.canJump()){

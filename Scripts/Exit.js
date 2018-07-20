@@ -8,7 +8,7 @@ var Exit = qc.defineBehaviour('qc.engine.Exit', qc.Behaviour, function() {
 	this.target = 0;
 	this.distance = -1;
 }, {
-	target: qc.Serializer.INT,
+	targets: qc.Serializer.INTS,
 	isAnti: qc.Serializer.BOOLEAN,
 	image: qc.Serializer.NODE,
 	body: qc.Serializer.NODE
@@ -16,7 +16,8 @@ var Exit = qc.defineBehaviour('qc.engine.Exit', qc.Behaviour, function() {
 
 Exit.prototype.awake = function() {
 	if(this.isAnti){
-		this.body.pivotY = 1;
-		this.body.anchoredY = -2 * this.gameObject.anchoredY;
+		this.body.scaleY = -1;
+		this.body.top = -2 * this.gameObject.anchoredY - 12;
+		this.body.bottom = 2 * this.gameObject.anchoredY;
 	}
 };
