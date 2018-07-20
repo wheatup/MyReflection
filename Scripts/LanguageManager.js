@@ -96,6 +96,10 @@ LanguageManager.prototype.getString = function(key) {
 	if(!this.currentLang || this.currentLang.$$ORIGINAL$$){
 		return key + '';
 	}else{
-		return this.currentLang[key] + '';
+		if(this.currentLang[key] === undefined){
+			return key;
+		}else{
+			return this.currentLang[key] + '';
+		}
 	}
 };

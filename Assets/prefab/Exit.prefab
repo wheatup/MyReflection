@@ -48,9 +48,9 @@
       0.5,
       1,
       -360,
-      -140,
+      -160,
       -360,
-      -140,
+      -160,
       30,
       50,
       0,
@@ -304,6 +304,234 @@
             }
           }
         }
+      },
+      {
+        "class": "qc.UIText",
+        "data": {
+          "uuid": "8ecc080f-994f-4a23-906e-8f91d3f1af55",
+          "_prefab": [
+            7,
+            ""
+          ],
+          "__lock": [
+            5,
+            null
+          ],
+          "name": [
+            7,
+            "DoorTag"
+          ],
+          "uniqueName": [
+            7,
+            ""
+          ],
+          "ignoreDestroy": [
+            5,
+            false
+          ],
+          "alpha": [
+            3,
+            1
+          ],
+          "visible": [
+            5,
+            true
+          ],
+          "colorTint": [
+            14,
+            16777215
+          ],
+          "static": [
+            5,
+            false
+          ],
+          "scripts": [
+            {
+              "clazz": "qc.NodeMask",
+              "data": "58169489-7a20-4a08-8e14-65bffb726f8a"
+            }
+          ],
+          "position": [
+            0.5,
+            0.5,
+            0,
+            -60,
+            0,
+            -60,
+            30,
+            20,
+            0,
+            0,
+            0,
+            0,
+            0.5,
+            1,
+            0.5,
+            1
+          ],
+          "scaleX": [
+            3,
+            0.9999999539051708
+          ],
+          "scaleY": [
+            3,
+            0.9999999539051708
+          ],
+          "rotation": [
+            3,
+            0
+          ],
+          "interactive": [
+            5,
+            false
+          ],
+          "isFiltersThrough": [
+            5,
+            null
+          ],
+          "children": [],
+          "fontFamily": [
+            3,
+            1
+          ],
+          "alignH": [
+            3,
+            2
+          ],
+          "alignV": [
+            3,
+            2
+          ],
+          "font": [
+            32,
+            "l33bf54a-a5d1-4de4-a108-c8d627875d8a",
+            "l33bf54a-a5d1-4de4-a108-c8d627875d8a"
+          ],
+          "bold": [
+            5,
+            false
+          ],
+          "fontSize": [
+            3,
+            32
+          ],
+          "color": [
+            14,
+            4278190080
+          ],
+          "text": [
+            7,
+            "2F"
+          ],
+          "lineSpacing": [
+            3,
+            0
+          ],
+          "wrap": [
+            5,
+            false
+          ],
+          "enableGlow": [
+            5,
+            false
+          ],
+          "startColor": [
+            14,
+            4294901760
+          ],
+          "endColor": [
+            14,
+            4278190080
+          ],
+          "gradient": [
+            5,
+            false
+          ],
+          "stroke": [
+            14,
+            4278190080
+          ],
+          "strokeThickness": [
+            3,
+            0
+          ],
+          "glowColor": [
+            14,
+            4294901760
+          ],
+          "autoSize": [
+            5,
+            false
+          ],
+          "shadowColor": [
+            14,
+            2147483648
+          ],
+          "shadowBlur": [
+            3,
+            0
+          ],
+          "shadowOffsetX": [
+            3,
+            3
+          ],
+          "shadowOffsetY": [
+            3,
+            3
+          ],
+          "enableShadow": [
+            5,
+            false
+          ]
+        },
+        "__json": {
+          "58169489-7a20-4a08-8e14-65bffb726f8a": {
+            "class": "qc.NodeMask",
+            "data": {
+              "uuid": [
+                7,
+                "58169489-7a20-4a08-8e14-65bffb726f8a"
+              ],
+              "enable": false,
+              "checkInField": [
+                5,
+                false
+              ],
+              "minAnchor": [
+                24,
+                "qc.Point",
+                [
+                  0,
+                  0
+                ]
+              ],
+              "maxAnchor": [
+                24,
+                "qc.Point",
+                [
+                  1,
+                  1
+                ]
+              ],
+              "minRotation": [
+                3,
+                0
+              ],
+              "maxRotation": [
+                3,
+                6.283185307179586
+              ],
+              "clipType": [
+                3,
+                1
+              ],
+              "mode": [
+                3,
+                0
+              ]
+            }
+          }
+        }
       }
     ],
     "texture": [
@@ -353,6 +581,21 @@
         "target": [
           1,
           1
+        ],
+        "targets": [
+          2,
+          [
+            3,
+            3
+          ]
+        ],
+        "doorTag": [
+          18,
+          "8ecc080f-994f-4a23-906e-8f91d3f1af55"
+        ],
+        "tagText": [
+          7,
+          "3F"
         ]
       }
     }
@@ -361,6 +604,10 @@
     "05fa0a1d-8587-4e34-ad80-2800c26144e4": {
       "key": "Assets/atlas/game.bin",
       "uuid": "05fa0a1d-8587-4e34-ad80-2800c26144e4"
+    },
+    "l33bf54a-a5d1-4de4-a108-c8d627875d8a": {
+      "key": "l33bf54a-a5d1-4de4-a108-c8d627875d8a",
+      "uuid": "l33bf54a-a5d1-4de4-a108-c8d627875d8a"
     }
   }
 }
