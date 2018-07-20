@@ -13,13 +13,18 @@ var EventButton = qc.defineBehaviour('qc.engine.EventButton', qc.Behaviour, func
 });
 
 EventButton.prototype.awake = function() {
+	var orgX = this.gameObject.anchoredX;
 	this.gameObject.interactive = true;
 	this.gameObject.onEnter.add(function(){
+		wh.Tween.remove(this.gameObject);
+		wh.Tween.get(this.gameObject).to({anchoredX:orgX + 10}, 200, wh.Easing.Quad.easeOut);
 		if(this.changeCursor){
 			document.body.style.cursor = 'pointer';
 		}
 	}, this);
 	this.gameObject.onExit.add(function(){
+		wh.Tween.remove(this.gameObject);
+		wh.Tween.get(this.gameObject).to({anchoredX:orgX}, 200, wh.Easing.Quad.easeIn);
 		if(this.changeCursor){
 			document.body.style.cursor = 'default';
 		}
